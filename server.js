@@ -1,11 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 443;
 const fs = require('fs');
 const https = require('https');
-
-
 
 //create api request for getting stats
 app.get('/api/stats', (req, res) => {
@@ -50,15 +47,24 @@ app.use((req, res) => {
 });
 
 
+const http = require('http');
+const useSSL = process.argv.indexOf('--no-ssl') === -1;
 
-var privateKey = fs.readFileSync(path.join(__dirname, '/cert/generated-private-key.txt'), 'utf8');
-var certificate = fs.readFileSync(path.join(__dirname, '/cert/c723de3c3cc8a0b9.pem'), 'utf8');
-var caBundle = fs.readFileSync(path.join(__dirname, '/cert/gd_bundle-g2-g1.crt'), 'utf8');
+let server;
+if (useSSL) {
+  const privateKey = fs.readFileSync(path.join(__dirname, '/cert/generated-private-key.txt'), 'utf8');
+  const certificate = fs.readFileSync(path.join(__dirname, '/cert/c723de3c3cc8a0b9.pem'), 'utf8');
+  const caBundle = fs.readFileSync(path.join(__dirname, '/cert/gd_bundle-g2-g1.crt'), 'utf8');
 
-
-https.createServer({
+  server = https.createServer({
     key: privateKey,
     cert: certificate
-}, app).listen(port);
-console.log('Server listening on port ' + port);
+  }, app);
+} else {
+  server = http.createServer(app);
+}
 
+const port = useSSL ? 443 : 80;
+server.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
