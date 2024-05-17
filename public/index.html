@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Utility Belt</title>
+    <meta content="Utility Belt" property="og:title" />
+    <meta content="The official site for Utility Belt, a bot for Discord" property="og:description" />
+    <meta content="https://utilitybelt.app/" property="og:url" />
+    <meta content="https://utilitybelt.app/utility-belt2.png" property="og:image" />
+    <meta content=" #257EB7 " data-react-helmet="true" name="theme-color" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <!-- set favicon -->
+    <link rel="icon" href="./favicon.ico" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+  </head>
+  <body>
+      <div class="dark-mode-toggle">
+        <img id="dark-mode-toggle" src="./dark.png"></img>
+      </div>
+    <div>
+      <div class="home-container">
+        <div class="thq-section-padding"> 
+          <div class="star-container">
+            <canvas id='star-particle'></canvas>
+            <img
+              alt="Utility Belt"
+              src="./background-discord.svg"
+              class="star-image thq-img-ratio-16-9"
+            />
+            <div class="star-text">
+              <h2>
+                <a href="" class="typewrite" data-period="2000" data-type='[ "/download", "/imagine", "/image-to-gif", "/speech-bubble" ]'></a>
+                  <span class="wrap"></span>
+                </a>
+              </h2>
+            </div> 
+          </div>
+          <div class="hero1-max-width thq-section-max-width">
+            <div class="thq-flex-row">
+              <div class="hero1-column">
+                <div class="hero1-content">
+                  <h1 class="thq-heading-1 hero1-heading1">
+                    <span>Utility Belt</span>
+                  </h1>
+                  <p class="thq-body-large hero1-content1">
+                    <span>
+                      Utility Belt is a handy little discord bot to add more functionality to your server.
+                      Add it with the button below, or keep scrolling to learn more.
+                    </span>
+                  </p>
+                </div>
+                <div class="hero1-actions">
+                  <button class="thq-button-filled hero1-button">
+                    <span class="thq-body-small"><span>Add to Server</span></span>
+                    <script>
+                      document.querySelector('.hero1-button').addEventListener('click', () => {
+                        window.location.href = 'https://discord.com/oauth2/authorize?client_id=1098280039486849174&scope=bot&permissions=275146861665';
+                      }); 
+                    </script>
+                  </button>
+                  <button class="thq-button-outline hero1-button1">
+                    <span class="thq-body-small">
+                      <span>Learn More</span>
+                      <script>
+                        document.querySelector('.hero1-button1').addEventListener('click', () => {
+                          document.querySelector('.features23-layout349').scrollIntoView({ behavior: 'smooth' });
+                        });
+                      </script>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="hero1-container1">
+                <img
+                  alt="PlaceholderImage1314"
+                  src="./utility-belt2.png"
+                  class="hero1-image1 thq-img-ratio-4-3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="banner3-container thq-section-padding">
+          <div class="banner3-max-width thq-section-max-width">
+            <div class="banner3-container1">
+              <h2 class="banner3-title thq-heading-2">
+                <a href="" class="typewrite" data-period="2000" data-type='[ "/download", "/imagine", "/image-to-gif", "/speech-bubble" ]'></a>
+                  <span class="wrap"></span>
+                </a>
+              </h2>
+            </div>
+          </div>
+        </div> -->
+        <div
+          class="features7-layout226 features7-root-class-name"
+        >
+          <div class="features7-max-width thq-section-max-width thq-grid-3">
+            <div class="thq-flex-column">
+              <span class="features7-over-title1 thq-body-small">
+                <span>Current Users</span>
+              </span>
+              <div class="thq-flex-column features7-content">
+                <h3 class="features7-title1 thq-heading-3">
+                  <span>15,544</span>
+                </h3>
+                <span class="features7-description1 thq-body-small">
+                  <span>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="thq-flex-column">
+              <span class="features7-over-title2 thq-body-small">
+                <span>Current Servers</span>
+              </span>
+              <div class="thq-flex-column features7-content1">
+                <strong class="features7-title2 thq-heading-3">
+                  <span>642</span>
+                </strong>
+                <span class="features7-description2 thq-body-small">
+                  <span>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="thq-flex-column">
+              <span class="features7-over-title3 thq-body-small">
+                <span>Commands Used</span>
+              </span>
+              <div class="thq-flex-column features7-content2">
+                <strong class="features7-title3 thq-heading-3">
+                  <span>8,180</span>
+                </strong>
+                <span class="features7-description3 thq-body-small">
+                  <span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="features23-layout349 thq-section-padding">
+          <div class="features23-max-width thq-section-max-width">
+            <div class="features23-container">
+              <h2 class="thq-heading-2">
+                <span>Some of Your Favorite Features</span>
+              </h2>
+              <span class="features23-text01 thq-body-small">
+                <span>
+                  These features are designed to make your discord-life a little more convenient.
+                  Based on our statistics, these are some of the most popular features of Utility Belt.
+                </span>
+              </span>
+            </div>
+            <div class="thq-grid-3">
+              <div class="features23-container2 thq-card">
+                <img
+                  alt="/image-to-gif Image Alt Text"
+                  src="./discord-mark-blue.svg"
+                  class="features23-image thq-img-round"
+                />
+                <h2 class="thq-heading-2"><span>/image-to-gif</span></h2>
+                <span class="features23-text03 thq-body-small">
+                  <span>
+                    Convert any image to a gif with a simple command. Great for
+                    sharing memes and reactions with your friends.
+                  </span>
+                </span>
+              </div>
+              <div class="features23-container3 thq-card">
+                <img
+                  alt="/speech-bubble Image Alt Text"
+                  src="./discord-mark-blue.svg"
+                  class="features23-image1 thq-img-round"
+                />
+                <h2 class="thq-heading-2">
+                  <span>/speech-bubble</span>
+                </h2>
+                <span class="features23-text05 thq-body-small">
+                  <span>
+                    Add a speech bubble to any image. The fastest way to make any image into a meme.
+                  </span>
+                </span>
+              </div>
+              <div class="features23-container4 thq-card">
+                <img
+                  alt="/video-to-gif Image Alt Text"
+                  src="./discord-mark-blue.svg"
+                  class="features23-image2 thq-img-round"
+                />
+                <h2 class="thq-heading-2"><span>/video-to-gif</span></h2>
+                <span class="features23-text07 thq-body-small">
+                  <span>
+                    Command for taking a video link and converting it to a gif you can save and share.
+                  </span>
+                </span>
+              </div>
+              <div class="features23-container5 thq-card">
+                <img
+                  alt="/download Image Alt Text"
+                  src="./discord-mark-blue.svg"
+                  class="features23-image3 thq-img-round"
+                />
+                <h2 class="thq-heading-2"><span>/download</span></h2>
+                <span class="features23-text09 thq-body-small">
+                  <span>
+                    Download media from dozens of websites with a simple command. Includes YouTube, SoundCloud, TikTok and more!
+                    Choose between audio or video downloads with a customizable quality selector.
+                  </span>
+                </span>
+              </div>
+              <div class="features23-container6 thq-card">
+                <img
+                  alt="/imagine Image Alt Text"
+                  src="./discord-mark-blue.svg"
+                  class="features23-image4 thq-img-round"
+                />
+                <h2 class="thq-heading-2"><span>/imagine</span></h2>
+                <span class="features23-text11 thq-body-small">
+                  <span>
+                    AI generate an image with SDXL! Contains plenty of customizable options including Img2Img, Strength and Seed.
+                  </span>
+                </span>
+              </div>
+              <div class="features23-container7 thq-card">
+                <img
+                  alt="/notes Image Alt Text"
+                  src="./discord-mark-blue.svg"
+                  class="features23-image5 thq-img-round"
+                />
+                <h2 class="thq-heading-2"><span>/notes</span></h2>
+                <span class="features23-text13 thq-body-small">
+                  <span>
+                    Take notes in a simple and easy to use manor. All right from the comfort of your discord server.
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer4-footer7">
+          <div class="footer4-max-width thq-section-max-width">
+            <div class="footer4-content">
+              <div class="footer4-logo">
+                <img
+                  alt="Utility Belt Logo"
+                  src="./utility-belt.png"
+                  class="footer4-logo1" 
+                />
+              </div>
+              <div class="footer4-links">
+                <a href="mailto:claw.reach@gmail.com" class="thq-body-small"><span>Email</span></a>
+                <a href="https://discord.gg/racJC3KmRH" class="thq-body-small"><span>Discord</span></a>
+              </div>  
+            </div>
+            <div class="footer4-credits">
+              <div class="thq-divider-horizontal"></div>  
+              <div class="footer4-row">
+                <div class="footer4-container">
+                  <span class="thq-body-small">2024 - CLAW1200</span>
+                </div>
+                <div class="footer4-footer-links">  
+                  <a href="./privacy.html" class="footer4-text6 thq-body-small">Privacy Policy</a>
+                  </span> 
+                  <span class="thq-body-small">
+                    <a href="./tos.html" class="footer4-text7">Terms of Service</a>
+                  </span>
+                  <span class="thq-body-small">
+                    <a href="https://github.com/CLAW1200/utilBot" class="footer4-text8">Github</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+@font-face {
+    font-family: Uni Sans;
+    src: url("./fonts/uni-sans.heavy-caps.otf") format("opentype");
+}
+
+.container-title{
+    font-size: 30px;
+    font-family: "Uni Sans";
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+
+}
+
+body {
+    font-family: "Uni Sans";
+    font-weight: 400;
+    font-style:normal;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.15;
+    color: var(--dl-color-theme-neutral-light);
+    background-color: var(--dl-color-theme-neutral-dark);
+    fill: var(--dl-color-theme-neutral-light);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+background-color: #191818;
+color: #FBFAF9;
+}
+
+img.inverted {
+filter: invert(1);
+}
+
+#dark-mode-toggle {
+position: fixed;
+bottom : 10px;
+right: 10px;
+width: 50px;
+height: 50px;
+z-index: 1000;
+cursor: pointer;
+}
+@media (max-width: 600px) {
+#dark-mode-toggle {
+    bottom: 10px;
+    left : 10px;
+    top: auto;
+    right: auto;
+}
+}
+
+#dark-mode-toggle:hover {
+animation: glow 1s infinite;
+}
+
+
+@keyframes glow {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+}
+100% {
+    transform: scale(1);
+}
+}
+
+.container {
+overflow: hidden;
+}
+
+.content-policy {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-style:normal;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.15;
+    padding: 20px;
+    margin: auto;
+}
