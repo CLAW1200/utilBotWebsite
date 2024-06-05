@@ -58,7 +58,8 @@ if (useSSL) {
 
   server = https.createServer({
     key: privateKey,
-    cert: certificate
+    cert: certificate,
+    ca: caBundle
   }, app);
 } else {
   server = http.createServer(app);
