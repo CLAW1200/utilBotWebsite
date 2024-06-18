@@ -35,14 +35,15 @@ img.inverted {
 
 #dark-mode-toggle {
   position: fixed;
-  bottom : 10px;
-  right: 10px;
+  top: 10px;
+  left: 10px;
   width: 50px;
   height: 50px;
   z-index: 1000;
   cursor: pointer;
   border-radius: 50%;
 }
+
 @media (max-width: 600px) {
   #dark-mode-toggle {
     bottom: 10px;
