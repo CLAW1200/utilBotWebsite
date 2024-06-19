@@ -221,6 +221,32 @@ window.onload = function() {
     document.getElementById('dark-mode-toggle').addEventListener('click', function() {
       darkModeToggle();
     });
+
+
+    // animate on view script
+
+        // Select the elements
+    const element = document.querySelector('.features7-max-width');
+    const element2 = document.querySelector('.features23-layout349');
+
+    // Create a new Intersection Observer
+    const observer = new IntersectionObserver((entries, observer) => {
+      // Loop over the entries
+      entries.forEach(entry => {
+        // If the element is in the viewport
+        if (entry.isIntersecting) {
+          // Add the animation class
+          entry.target.classList.add('animate');
+
+          // Stop observing the element so the animation only happens once
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    // Start observing the elements
+    observer.observe(element);
+    observer.observe(element2);
   };
 
 // call request api to get stats
