@@ -70,7 +70,7 @@ TxtType.prototype.tick = function() {
     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
     var that = this;
-    var delta = 200 - Math.random() * 100;
+    var delta = 180 - Math.random() * 100; // change first number to edit speed
 
     if (this.isDeleting) { delta /= 2; }
 

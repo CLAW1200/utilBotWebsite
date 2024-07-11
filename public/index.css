@@ -1,6 +1,6 @@
 @font-face {
   font-family: Uni Sans;
-  src: url("./fonts/uni-sans.heavy-caps.otf") format("opentype");
+  src: url("./fonts/ABCGintoNormal-Bold.otf") format("opentype");
 }
 
 html {
@@ -20,12 +20,12 @@ body {
   fill: var(--dl-color-theme-neutral-light);
   transition: background-color 0.5s ease, color 0.5s ease;
   background-color: #FBFAF9;
-  color: #191818;
+  color: #2c2f33;
 }
 
 
 body.dark-mode {
-  background-color: #191818;
+  background-color: #2c2f33;
   color: #FBFAF9;
 }
 
@@ -44,7 +44,7 @@ img.inverted {
   border-radius: 50%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   #dark-mode-toggle {
     bottom: 10px;
     left : 10px;
@@ -120,7 +120,7 @@ background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429
   align-items: center;
   flex-direction: column;
   background-color: #00000000;
-  top : 80%;
+  top : 70%;
   left: 0px;
   width: 100%;
   height: 100%;
@@ -129,9 +129,10 @@ background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429
 }
 
 /* If the viewport is less than 600px wide, adjust the font size */
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .star-text {
     font-size: 5vw; /* Adjust this value as needed */
+    top: 83%;
   }
 }
 
@@ -182,10 +183,10 @@ background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429
 }
 
 /* If the viewport is less than 600px wide, adjust the layout */
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .star-text {
-    top: 94%;
-    /* Add any additional styles needed for small screens here */
+    /* calculate center between the bottom of star-particle canvas and bottom of hero1-image */
+    position: relative; 
   }
 
   .hero1-image1 {
@@ -376,7 +377,7 @@ background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429
 .features23-container {
   gap: var(--dl-space-space-unit);
   display: flex;
-  max-width: 600px;
+  max-width: 991px;
   align-items: center;
   flex-direction: column;
   font-size: 24px;
