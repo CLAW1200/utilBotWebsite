@@ -13,7 +13,7 @@ function darkModeToggle() {
   line = document.getElementsByClassName('thq-divider-horizontal');
   for (i = 0; i < line.length; i++) {
     //set bg color to white or black
-    line[i].style.backgroundColor = line[i].style.backgroundColor === 'rgb(255, 255, 255)' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)';
+    line[i].style.backgroundColor = line[i].style.backgroundColor === 'rgb(255, 255, 255)' ? 'rgb(25, 24, 24)' : 'rgb(255, 255, 255)';
   }
 
   //set img src to light.png or dark.png
@@ -26,7 +26,7 @@ function darkModeToggle() {
       let box = document.getElementsByClassName(`features23-container${j}`);
       for (let i = 0; i < box.length; i++) {
         //set box shadow to black
-        box[i].style.boxShadow = 'rgba(0, 0, 0, 1) 2px 2px 4px 0px';
+        box[i].style.boxShadow = 'rgba(25, 24, 24, 1) 2px 2px 4px 0px';
       }
     }
     //save flag to local storage

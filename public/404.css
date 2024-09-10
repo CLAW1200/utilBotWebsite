@@ -37,8 +37,11 @@ body.dark-mode {
   color: #FBFAF9;
 }
 
+
+
 img.inverted {
   filter: invert(1);
+  color: 191818;
   transition: filter 0.5s ease;
 }
 
