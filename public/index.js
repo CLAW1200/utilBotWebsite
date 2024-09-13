@@ -47,6 +47,7 @@ function darkModeToggle() {
 }
 
 
+
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -243,7 +244,7 @@ window.onload = function() {
         }
       });
     });
-
+    
     // Start observing the elements
     observer.observe(element);
     observer.observe(element2);

@@ -32,7 +32,6 @@ app.get('/api/stats', (req, res) => {
   });
 });
 
-
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -47,25 +46,8 @@ app.use((req, res) => {
 });
 
 
-const http = require('http');
-const useSSL = process.argv.indexOf('--no-ssl') === -1;
-
-let server;
-if (useSSL) {
-  const privateKey = fs.readFileSync(path.join(__dirname, '/cert/generated-private-key.txt'), 'utf8');
-  const certificate = fs.readFileSync(path.join(__dirname, '/cert/c723de3c3cc8a0b9.pem'), 'utf8');
-  const caBundle = fs.readFileSync(path.join(__dirname, '/cert/gd_bundle-g2-g1.crt'), 'utf8');
-
-  server = https.createServer({
-    key: privateKey,
-    cert: certificate,
-    ca: caBundle
-  }, app);
-} else {
-  server = http.createServer(app);
-}
-
-const port = useSSL ? 443 : 80;
-server.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+// Start the server with http
+const port = 3000;
+app.listen(port, () => {
+  console.log('Server is running on port ${port}');
 });

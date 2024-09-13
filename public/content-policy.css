@@ -26,8 +26,8 @@ body {
 }
 
 body.dark-mode {
-background-color: #191818;
-color: #FBFAF9;
+    background-color: #2c2f33;
+    color: #FBFAF9;
 }
 
 img.inverted {
