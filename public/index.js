@@ -90,8 +90,6 @@ TxtType.prototype.tick = function() {
 };
 
 window.onload = function() {
-  
-
   // begin particle script
   var WIDTH;
   var HEIGHT;
@@ -251,7 +249,7 @@ window.onload = function() {
   };
 
 // call request api to get stats
-fetch('/api/stats')
+fetch('/api/0')
   .then((response) => response.json())
   .then((data) => {
     document.getElementsByClassName('features7-title1')[0].innerHTML = data.users;
