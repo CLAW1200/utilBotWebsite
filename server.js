@@ -6,74 +6,33 @@ const https = require('https');
 
 //create api request for getting stats
 app.get('/api/0', (req, res) => {
-  fs.readFile("/home/ubuntu/utilBot/data/data.csv", 'utf8', function(err, data) {
+  // Open SqLite database
+  const sqlite3 = require('sqlite3').verbose();
+  let db = new sqlite3.Database('/home/ubuntu/Discord-UtilityBeltv2/data/database.db', sqlite3.OPEN_READONLY, (err) => {
     if (err) {
-      return console.log(err);
+      console.error(err.message);
     }
-    
-    // Split the data into lines
-    let lines = data.split('\n');
-
-    // Get the last line
-    let lastLine = lines[lines.length - 2]; // -2 because the last element is an empty string due to the split
-
-    // Split the line by commas
-    let parts = lastLine.split(',');
-
-    // Get the last three numbers
-    let numbers = parts.slice(-3);
-
-    // Send the numbers as a response
-    res.json({
-      users: parseInt(numbers[0]),
-      servers: parseInt(numbers[1]),
-      commands: parseInt(numbers[2])
+    // Get the last row from the stats table
+    db.get('SELECT * FROM stats ORDER BY id DESC LIMIT 1', (err, row) => {
+      if (err) {
+        console.error(err.message);
+      }
+      let users = row.guild_member_total;
+      let servers = row.guild_count;
+      let commands = row.total_command_count + 17894; // add the commands from the old database
+      // Send the response
+      res.json({ users, servers, commands });
     });
   });
-});
 
-app.get('/api/1', (req, res) => {
-  // Parse x from request and return x*2
-  let hours = parseInt(req.query.hours);
-  console.log(`Received x: ${req.query.hours}, Parsed x: ${hours}`);
-  if (isNaN(hours)) {
-    return res.status(400).json({ error: 'Invalid input' });
-  }
-  // return the most recent line and  x number of lines ago from the data.csv file
-  fs.readFile("/home/ubuntu/utilBot/data/data.csv", 'utf8', function(err, data) {
+  // Close the database
+  db.close((err) => {
     if (err) {
-      return console.log(err);
+      console.error(err.message);
     }
-    
-    // Split the data into lines
-    let lines = data.split('\n');
-    
-    // Get the last line
-    let lastLine = lines[lines.length - 2]; // -2 because the last element is an empty string due to the split
-
-    // Get the number of lines subtract x from the end
-    let xthLine = lines[lines.length - 2 - hours]; // -2 because the last element is an empty string due to the split
-
-
-    // Split the line by commas
-    let parts = lastLine.split(',');
-    let xthParts = xthLine.split(',');
-
-    // Get the last three numbers
-    let numbers = parts.slice(-3);
-    let xthNumbers = xthParts.slice(-3);
-
-    // Send the numbers as a response
-    res.json({
-      currentUsers: parseInt(numbers[0]),
-      currentServers: parseInt(numbers[1]),
-      currentCommands: parseInt(numbers[2]),
-      prevUsers: parseInt(xthNumbers[0]),
-      prevServers: parseInt(xthNumbers[1]),
-      prevCommands: parseInt(xthNumbers[2])
-    });
   });
-});
+}
+);
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
